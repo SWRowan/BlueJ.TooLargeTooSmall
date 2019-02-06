@@ -18,10 +18,14 @@ public class Game {
          userNum = guessNum.nextInt();
          guessCount++;
          
-          if (userNum == lastGuess){
+          if(userNum < 1 || userNum > 20){
+              System.out.println("The number is between 1 and 20...");
+              guessCount--;
+          }
+          else if (userNum == lastGuess){
            System.out.println("You already guessed that!");
            guessCount--;
-          }
+           }
           else if(userNum == mysteryNum) {
            System.out.println("You Got It! The number was " + mysteryNum + " !");
            System.out.println("You guessed " +guessCount+ " times.");
